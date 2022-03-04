@@ -1,5 +1,4 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Button from 'components/Button';
 import { ReactComponent as ChevronLeft } from 'assets/icons/chevron-left.svg';
@@ -48,7 +47,7 @@ const Pagination = ({ className, pages, page, setPage }) => {
   };
 
   return (
-    <nav className={clsx(css.pagination, className)}>
+    <nav className={clsx(css.pagination, className)} data-testid="pagination">
       <ul className={css.list}>
         <li className={css.listItem}>
           <button
@@ -56,6 +55,7 @@ const Pagination = ({ className, pages, page, setPage }) => {
             className={clsx(css.chevron, page === 1 && css.disabled)}
             onClick={() => handleArrowClick(-1, 1)}
             disabled={page === 1}
+            data-testid="chevron-left"
           >
             <ChevronLeft className={css.chevronIcon} />
           </button>
@@ -70,7 +70,6 @@ const Pagination = ({ className, pages, page, setPage }) => {
               <Button
                 className={css.button}
                 active={page === p}
-                disabled={page === p && css.active}
                 onClick={() => changePage(p)}
               >
                 {p}
@@ -84,6 +83,7 @@ const Pagination = ({ className, pages, page, setPage }) => {
             className={clsx(css.chevron, page === pages && css.disabled)}
             onClick={() => handleArrowClick(1, pages)}
             disabled={page === pages}
+            data-testid="chevron-right"
           >
             <ChevronRight className={css.chevronIcon} />
           </button>
@@ -93,15 +93,11 @@ const Pagination = ({ className, pages, page, setPage }) => {
   );
 };
 
-// Pagination.defaultProps = {
-//   className: '',
-// };
-
-// Pagination.propTypes = {
-//   className: PropTypes.string,
-//   pages: PropTypes.number.isRequired,
-//   page: PropTypes.number.isRequired,
-//   setPage: PropTypes.func.isRequired,
-// };
+Pagination.propTypes = {
+  className: PropTypes.string,
+  pages: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
+};
 
 export default Pagination;

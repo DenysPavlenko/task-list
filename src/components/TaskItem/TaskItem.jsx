@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './TaskItem.module.scss';
 
 const TaskItem = ({ title, cash, xp, time, icon, location }) => {
@@ -8,15 +9,24 @@ const TaskItem = ({ title, cash, xp, time, icon, location }) => {
         <h5 className={css.title}>{title}</h5>
         <div className={css.details}>
           {cash && <p>Cash: {cash}</p>}
-          {!cash && <p>XP: {xp}</p>}
+          {xp && <p>XP: {xp}</p>}
         </div>
       </div>
       <div className={css.info}>
-        {location && <p>Location: {location.address}</p>}
+        {location && <p>Location: {location}</p>}
         {time && <p>Time: {new Date(time).toLocaleString('nl-NL')}</p>}
       </div>
     </div>
   );
+};
+
+TaskItem.propTypes = {
+  title: PropTypes.string,
+  cash: PropTypes.string,
+  xp: PropTypes.string,
+  time: PropTypes.string,
+  icon: PropTypes.string,
+  location: PropTypes.string,
 };
 
 export default TaskItem;

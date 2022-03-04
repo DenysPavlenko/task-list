@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Checkbox.module.scss';
 
 const Checkbox = ({ checked, onChange, name, label }) => {
@@ -13,6 +14,13 @@ const Checkbox = ({ checked, onChange, name, label }) => {
       <span className={css.label}>{label}</span>
     </label>
   );
+};
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+  name: PropTypes.string,
+  label: PropTypes.string,
 };
 
 export default Checkbox;
