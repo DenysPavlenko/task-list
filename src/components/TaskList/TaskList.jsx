@@ -8,6 +8,7 @@ import Checkbox from 'components/Checkbox';
 import tasks from 'data/tasks';
 import { filterByTab, filterTasks, tasksPagination } from './utils';
 import { useFiltersState } from 'context/FiltersContext';
+import categories from 'data/categories';
 import css from './TaskList.module.scss';
 
 const tabs = [
@@ -111,8 +112,13 @@ const TaskList = () => {
             </div>
             <div className={css.scroll}>
               {splitTasks.map((task) => {
+                const icon = categories.find(
+                  (cat) => task.category === cat.value
+                )?.icon;
                 return (
                   <TaskItem
+                    key={task.id}
+                    icon={icon}
                     title={task.title}
                     cash={task.reward.cash}
                     xp={task.reward.xp}
@@ -120,7 +126,6 @@ const TaskList = () => {
                       (tab === 'location' || tab === 'all') && task.location
                     }
                     time={(tab === 'time' || tab === 'all') && task.location}
-                    key={task.id}
                   />
                 );
               })}

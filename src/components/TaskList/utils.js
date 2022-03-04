@@ -63,7 +63,7 @@ export const filterByTab = (tasks, tab) => {
 };
 
 export const filterTasks = (tasks, filters) => {
-  const { category, groupBy, byReward } = filters;
+  const { category, groupBy } = filters;
 
   let filteredTasks = tasks.filter((task) => {
     return !category || category === 'ALL' ? true : task.category === category;

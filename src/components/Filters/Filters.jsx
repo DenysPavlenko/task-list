@@ -4,7 +4,7 @@ import Select from 'components/Select';
 import Button from 'components/Button';
 import Radio from 'components/Radio';
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
-import categories from './categories';
+import categories from 'data/categories';
 import { useFiltersState } from 'context/FiltersContext';
 import css from './Filters.module.scss';
 
