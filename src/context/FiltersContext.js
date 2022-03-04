@@ -2,7 +2,8 @@ import React from 'react';
 
 const initialState = {
   category: null,
-  groupBy: 'appointmentTime',
+  groupBy: '',
+  byReward: '',
 };
 
 const FiltersContext = React.createContext();
@@ -14,6 +15,9 @@ const reducer = (state, action) => {
     }
     case 'SET_GROUP_BY': {
       return { ...state, groupBy: action.payload };
+    }
+    case 'SET_BY_REWARD': {
+      return { ...state, byReward: action.payload };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);

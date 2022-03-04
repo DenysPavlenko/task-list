@@ -14,7 +14,9 @@ const Filters = ({ show, onClose }) => {
   const [category, setCategory] = useState(categories[0]);
   const [groupBy, setGroupBy] = useState(filters.groupBy);
 
-  const handleGroupBy = (e) => setGroupBy(e.target.value);
+  const handleGroupBy = (e) => {
+    groupBy === e.target.value ? setGroupBy('') : setGroupBy(e.target.value);
+  };
 
   const handleApply = () => {
     dispatch({ type: 'SET_GROUP_BY', payload: groupBy });
@@ -38,6 +40,32 @@ const Filters = ({ show, onClose }) => {
               onChange={setCategory}
               options={categories}
             />
+          </div>
+          <div className={css.filter}>
+            <h4 className={css.filterTitle}>Filter by:</h4>
+            <div className={css.filterBoxes}>
+              <Radio
+                name="groupBy"
+                value="reward"
+                label="Reward"
+                onClick={handleGroupBy}
+                checked={groupBy === 'reward'}
+              />
+              <Radio
+                name="groupBy"
+                value="paid"
+                label="Only paid"
+                onClick={handleGroupBy}
+                checked={groupBy === 'paid'}
+              />
+              <Radio
+                name="groupBy"
+                value="xp"
+                label="Only XP"
+                onClick={handleGroupBy}
+                checked={groupBy === 'xp'}
+              />
+            </div>
           </div>
           <div className={css.apply}>
             <Button variant="primary" onClick={handleApply}>

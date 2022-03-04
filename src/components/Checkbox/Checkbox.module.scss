@@ -1,13 +1,14 @@
 .checkbox {
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
 }
 .input {
   appearance: none;
   border: 1px solid #d8d8d8;
-  width: 18px;
-  height: 18px;
-  border-radius: 50% !important;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px !important;
   margin-right: 5px;
   &:checked {
     background-color: blue;

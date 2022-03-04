@@ -21,31 +21,37 @@ const getDistance = (lat1, lon1, lat2, lon2, unit = 'K') => {
   return dist;
 };
 
+const sortByDistance = (tasks) => {
+  const userLoc = JSON.parse(localStorage.getItem('userLocation'));
+  if (userLoc) {
+    return [...tasks].sort((a, b) => {
+      return (
+        getDistance(
+          userLoc.latitude,
+          userLoc.longitude,
+          b.location.latitude,
+          b.location.longitude
+        ) -
+        getDistance(
+          userLoc.latitude,
+          userLoc.longitude,
+          a.location.latitude,
+          a.location.longitude
+        )
+      );
+    });
+  } else {
+    return tasks;
+  }
+};
+
 export const filterByTab = (tasks, tab) => {
   let filtered = [];
   if (tab === 'all') {
     return tasks;
   } else if (tab === 'location') {
     filtered = tasks.filter((task) => task.location);
-    const userLoc = JSON.parse(localStorage.getItem('userLocation'));
-    if (userLoc) {
-      filtered = [...filtered].sort((a, b) => {
-        return (
-          getDistance(
-            userLoc.latitude,
-            userLoc.longitude,
-            b.location.latitude,
-            b.location.longitude
-          ) -
-          getDistance(
-            userLoc.latitude,
-            userLoc.longitude,
-            a.location.latitude,
-            a.location.longitude
-          )
-        );
-      });
-    }
+    filtered = sortByDistance(filtered);
   } else {
     filtered = tasks.filter((task) => task.appointmentDateTime);
     filtered = [...filtered].sort(
@@ -57,37 +63,38 @@ export const filterByTab = (tasks, tab) => {
 };
 
 export const filterTasks = (tasks, filters) => {
-  const { category } = filters;
-  let filteredTasks = [];
+  const { category, groupBy, byReward } = filters;
 
-  // const tasksWithCash = tasks.filter(({ reward }) => reward.cash);
-  // const tasksWithXp = tasks.filter(({ reward }) => reward.xp && !reward.cash);
+  let filteredTasks = tasks.filter((task) => {
+    return !category || category === 'ALL' ? true : task.category === category;
+  });
 
-  // const sortedWithCash = [...tasksWithCash].sort((a, b) => {
-  //   if (a.reward.cash !== b.reward.cash) {
-  //     return b.reward.cash - a.reward.cash;
-  //   } else {
-  //     return b.reward.xp - a.reward.xp;
-  //   }
-  // });
-
-  // const sortedWithXp = [...tasksWithXp].sort((a, b) => {
-  //   return b.reward.xp - a.reward.xp;
-  // });
-
-  // filteredTasks = [...sortedWithCash, ...sortedWithXp];
-
-  // if (groupBy === 'appointmentTime') {
-  //   filteredTasks = [...filteredTasks].sort((a, b) => {
-  //     return a - b;
-  //   });
-  // }
-
-  if (category) {
-    filteredTasks = tasks.filter((task) => task.category === category);
+  if (groupBy === 'reward') {
+    const tasksWithCash = tasks.filter(({ reward }) => reward.cash);
+    const tasksWithXp = tasks.filter(({ reward }) => reward.xp && !reward.cash);
+    const sortedWithCash = [...tasksWithCash].sort((a, b) => {
+      if (a.reward.cash !== b.reward.cash) {
+        return b.reward.cash - a.reward.cash;
+      } else {
+        return b.reward.xp - a.reward.xp;
+      }
+    });
+    const sortedWithXp = [...tasksWithXp].sort((a, b) => {
+      return b.reward.xp - a.reward.xp;
+    });
+    filteredTasks = [...sortedWithCash, ...sortedWithXp];
   }
 
-  return filteredTasks.length > 0 ? filteredTasks : tasks;
+  if (groupBy === 'paid') {
+    filteredTasks = filteredTasks.filter((task) => task?.reward?.cash);
+  }
+  if (groupBy === 'xp') {
+    filteredTasks = filteredTasks.filter(
+      (task) => task?.reward?.xp && !task?.reward?.cash
+    );
+  }
+
+  return filteredTasks;
 };
 
 export const tasksPagination = (page, tasks) => {
