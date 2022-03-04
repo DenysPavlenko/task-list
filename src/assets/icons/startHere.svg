@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <filter id="cn8wegku5a" width="229.2%" height="181%" x="-64.6%" y="-39%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="jt91klpn0b" d="M.467 12.375C1.052 7.892 3.01 3.978 6.345.633 6.705.27 7.291.27 7.652.63l.003.002c3.334 3.345 5.293 7.259 5.878 11.742.623 4.77.623 8.346 0 10.73C10.63 23.703 8.452 24 7 24s-3.63-.298-6.533-.894c-.623-2.385-.623-5.962 0-10.73z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-275 -288) translate(275 288)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g filter="url(#cn8wegku5a)" transform="translate(-275 -288) translate(275 288) rotate(45 12.377 31.247)">
+                    <path fill="#EB5E33" stroke="#222" stroke-linejoin="round" stroke-width=".924" d="M17.541 19.387c1.067 0 1.791.337 2.266.993.443.613.666 1.55.666 2.882 0 1.641-.828 3.918-2.533 6.821-.167.284-.332.557-.497.82-.112-.289-.224-.588-.336-.896-1.045-2.871-1.558-5.12-1.558-6.745 0-.27-.003-.524-.006-.76-.014-1.122.014-1.886.289-2.36.27-.466.736-.755 1.71-.755z"/>
+                    <path fill="#FF6738" stroke="#222" stroke-linejoin="round" stroke-width=".924" d="M2.47 19.387c-1.067 0-1.79.337-2.266.993-.443.613-.666 1.55-.666 2.882 0 1.641.828 3.918 2.534 6.821.166.284.332.557.496.82.112-.289.224-.588.336-.896 1.045-2.871 1.558-5.12 1.558-6.745 0-.27.003-.524.006-.76.014-1.122-.013-1.886-.288-2.36-.27-.466-.737-.755-1.71-.755z"/>
+                    <g transform="translate(3)">
+                        <mask id="qlfgzeq0fc" fill="#fff">
+                            <use xlink:href="#jt91klpn0b"/>
+                        </mask>
+                        <use fill="#FFF" stroke="#222" stroke-width=".924" xlink:href="#jt91klpn0b"/>
+                        <path fill="#000" fill-opacity=".05" d="M-8.136-2.402c4.366-1.995 6.882-1.826 7.549.507 1 3.5-8.79 15.63-3.182 20.153 1.435 1.157 21.633 10.507 21.633 13.34 0 4.44-6.667 5.106-20 2l-9.5-8 3.5-28z" mask="url(#qlfgzeq0fc)" transform="matrix(-1 0 0 1 6.227 0)"/>
+                    </g>
+                    <circle cx="10" cy="10" r="2" fill="#EDEDED" stroke="#222"/>
+                    <path fill="#FF6738" stroke="#222" stroke-linejoin="round" d="M9.198 18.89c1.143-.49 1.363-.287 1.547-.068l.057.069c.156.18.303.446.417.82.17.556.281 1.388.281 2.553 0 1.579-.353 4.518-1.064 8.818-.18 1.089-.355 2.088-.522 2.996-.15-.912-.305-1.913-.466-3.005-.634-4.295-.948-7.232-.948-8.81 0-1.164.11-1.996.28-2.552.115-.374.262-.64.418-.82z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

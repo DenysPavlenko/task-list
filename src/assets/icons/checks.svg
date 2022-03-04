@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <rect id="0yne6ggs9a" width="22" height="22" x="0" y="0" rx="1"/>
+        <path id="c436frha8c" d="M1 10.5c2.5 1.5 6 3 6 3s7-9 14.454-13.5L22 1.579C19.273 3.157 11.091 12.105 8.091 20c0 0-6.454-6.657-8.091-8.5l1-1z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-275 -96) translate(275 96)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g transform="translate(-275 -96) translate(275 96) translate(7 5.066)">
+                    <rect width="25" height="25" x=".5" y="2.434" stroke="#222" rx="2"/>
+                    <path fill="#F7F7F7" fill-rule="nonzero" d="M29.429 5.417L27.556 0l-2.094 1.197c-.498.285-1.004.593-1.518.924-2.017 1.299-4.128 2.927-6.295 4.811-1.97 1.713-.23 11.644 1.557 9.042l.516-.74.525-.73.266-.36.535-.712.269-.35.54-.686.27-.335.538-.656c.627-.751 1.247-1.454 1.842-2.089l.504-.527C26.17 7.599 27.213 6.7 28 6.243l1.428-.826z"/>
+                    <g transform="translate(2 3.934)">
+                        <mask id="ns532rfvhb" fill="#fff">
+                            <use xlink:href="#0yne6ggs9a"/>
+                        </mask>
+                        <use fill="#FFF" xlink:href="#0yne6ggs9a"/>
+                        <path fill="#000" fill-opacity=".05" d="M-3-3c6-1 8.333-.667 7 1C2 .5.764 16.51 4.5 19c1.5 1 16.2.916 18.5-1 3-2.5 4.144 5.307.5 6.5-2.143.702-8.172.648-18.088-.16H-3V-3z" mask="url(#ns532rfvhb)"/>
+                    </g>
+                    <g transform="translate(5 2.934)">
+                        <mask id="7j6zkjbi6d" fill="#fff">
+                            <use xlink:href="#c436frha8c"/>
+                        </mask>
+                        <use fill="#FF6738" xlink:href="#c436frha8c"/>
+                        <path fill="#000" fill-opacity=".08" d="M22 .5c.667 2 1.167 3.667 1.5 5L8 21l-9-9c0-1.333.5-1.667 1.5-1 1.5 1 4.603 3.488 7 5.5 2-4 12.5-15 14.5-16z" mask="url(#7j6zkjbi6d)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

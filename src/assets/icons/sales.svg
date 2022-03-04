@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <filter id="yz71dajkfa" width="180.8%" height="180.8%" x="-40.4%" y="-40.4%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="nd3p4l8meb" d="M.002 11.402L.043 1.039C.045.49.49.045 1.04.043L11.402.002c.266-.001.522.104.71.293l13.18 13.18c.391.39.391 1.023 0 1.414L14.89 25.293c-.39.39-1.024.39-1.414 0L.295 12.113c-.189-.189-.294-.445-.293-.711z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-131 -288) translate(131 288)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g filter="url(#yz71dajkfa)" transform="translate(-131 -288) translate(131 288) translate(7 7)">
+                    <g>
+                        <mask id="ptkys1lkoc" fill="#fff">
+                            <use xlink:href="#nd3p4l8meb"/>
+                        </mask>
+                        <path stroke="#222" d="M11.404.502l13.535 13.326L14.535 24.94.648 11.76.543 1.041l10.86-.54z"/>
+                        <path fill="#000" fill-opacity=".05" d="M0-11c.667-2 1.333-1.833 2 .5C3-7 3.764 8.51 7.5 11 9 12 26 20.167 26 23c0 4.44-6.667 5.106-20 2l-9.5-8L0-11z" mask="url(#ptkys1lkoc)"/>
+                    </g>
+                    <circle cx="7.144" cy="7.177" r="2.425" fill="#EDEDED" stroke="#222"/>
+                    <path stroke="#FF6738" stroke-width="1.5" d="M13.412 17.623L17.59 13.445M10.905 15.116L15.083 10.938"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

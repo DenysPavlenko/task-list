@@ -1,0 +1,20 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.input {
+  appearance: none;
+  border: 1px solid #d8d8d8;
+  width: 18px;
+  height: 18px;
+  border-radius: 50% !important;
+  margin-right: 5px;
+  &:checked {
+    background-color: blue;
+  }
+}
+.label {
+  font-size: 16px;
+  user-select: none;
+}

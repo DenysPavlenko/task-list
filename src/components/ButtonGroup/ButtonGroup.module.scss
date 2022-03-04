@@ -1,0 +1,16 @@
+.container {
+  button:not(:last-of-type) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button:not(:first-of-type) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  button:not(:last-child) {
+    border-right: 1px solid black;
+  }
+  button{
+    padding: 10px 15px;
+  }
+}

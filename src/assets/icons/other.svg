@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <path id="rc12i9vrqb" d="M5.5.289L8.83 2.21c.31.179.5.51.5.866v3.846c0 .357-.19.687-.5.866L5.5 9.71c-.31.179-.69.179-1 0L1.17 7.79c-.31-.179-.5-.51-.5-.866V3.077c0-.357.19-.687.5-.866L4.5.29c.31-.179.69-.179 1 0z"/>
+        <path id="ntiluco5qd" d="M5.5.289L8.83 2.21c.31.179.5.51.5.866v3.846c0 .357-.19.687-.5.866L5.5 9.71c-.31.179-.69.179-1 0L1.17 7.79c-.31-.179-.5-.51-.5-.866V3.077c0-.357.19-.687.5-.866L4.5.29c.31-.179.69-.179 1 0z"/>
+        <path id="vd3zcw5v6f" d="M5.5.289L8.83 2.21c.31.179.5.51.5.866v3.846c0 .357-.19.687-.5.866L5.5 9.71c-.31.179-.69.179-1 0L1.17 7.79c-.31-.179-.5-.51-.5-.866V3.077c0-.357.19-.687.5-.866L4.5.29c.31-.179.69-.179 1 0z"/>
+        <filter id="1639j6goia" width="202.8%" height="216.8%" x="-51.4%" y="-58.4%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-179 -240) translate(179 240)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g filter="url(#1639j6goia)" transform="translate(-179 -240) translate(179 240) translate(8 9)">
+                    <g transform="translate(7)">
+                        <mask id="is47ymv4gc" fill="#fff">
+                            <use xlink:href="#rc12i9vrqb"/>
+                        </mask>
+                        <path stroke="#222" d="M5-.345c.259 0 .518.067.75.2h0l3.33 1.923c.464.268.75.763.75 1.3h0v3.845c0 .536-.286 1.03-.75 1.299h0l-3.33 1.922c-.464.268-1.036.268-1.5 0h0L.92 8.222c-.464-.268-.75-.763-.75-1.3h0V3.078c0-.536.286-1.03.75-1.299h0L4.25-.144c.232-.134.491-.201.75-.201z"/>
+                        <path fill="#000" fill-opacity=".08" d="M-3 -3H5V12H-3z" mask="url(#is47ymv4gc)"/>
+                    </g>
+                    <g transform="translate(0 12)">
+                        <mask id="xvpdg5z54e" fill="#fff">
+                            <use xlink:href="#ntiluco5qd"/>
+                        </mask>
+                        <path stroke="#222" d="M5-.345c.259 0 .518.067.75.2h0l3.33 1.923c.464.268.75.763.75 1.3h0v3.845c0 .536-.286 1.03-.75 1.299h0l-3.33 1.922c-.464.268-1.036.268-1.5 0h0L.92 8.222c-.464-.268-.75-.763-.75-1.3h0V3.078c0-.536.286-1.03.75-1.299h0L4.25-.144c.232-.134.491-.201.75-.201z"/>
+                        <path fill="#000" fill-opacity=".08" d="M-3 -2H5V13H-3z" mask="url(#xvpdg5z54e)"/>
+                    </g>
+                    <g transform="translate(14 12)">
+                        <mask id="3d5ljg55mg" fill="#fff">
+                            <use xlink:href="#vd3zcw5v6f"/>
+                        </mask>
+                        <path stroke="#222" d="M5-.345c.259 0 .518.067.75.2h0l3.33 1.923c.464.268.75.763.75 1.3h0v3.845c0 .536-.286 1.03-.75 1.299h0l-3.33 1.922c-.464.268-1.036.268-1.5 0h0L.92 8.222c-.464-.268-.75-.763-.75-1.3h0V3.078c0-.536.286-1.03.75-1.299h0L4.25-.144c.232-.134.491-.201.75-.201z"/>
+                        <path fill="#000" fill-opacity=".08" d="M-3 -2H5V13H-3z" mask="url(#3d5ljg55mg)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

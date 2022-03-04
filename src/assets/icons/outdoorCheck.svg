@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <filter id="39td4tykpa" width="213.6%" height="188.5%" x="-56.8%" y="-43.9%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <circle id="wlstf9wo5d" cx="2.5" cy="2.5" r="2.5"/>
+        <path id="eby7bm3pvb" d="M11 28.5c7.333-7.438 11-13.214 11-17.328C22 5.002 17.075 0 11 0S0 5.002 0 11.172c0 4.114 3.667 9.89 11 17.328z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-227 -240) translate(227 240)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g filter="url(#39td4tykpa)" transform="translate(-227 -240) translate(227 240) translate(9 5.5)">
+                    <g>
+                        <mask id="q4wdaq59qc" fill="#fff">
+                            <use xlink:href="#eby7bm3pvb"/>
+                        </mask>
+                        <use fill="#FFF" stroke="#222" xlink:href="#eby7bm3pvb"/>
+                        <path fill="#FFF" fill-opacity=".05" d="M11 17.5l5-5 4 4.5c1.333-2.891 2-4.725 2-5.5 0-6.075-4.925-11-11-11S0 5.425 0 11.5c0 2.098.587 4.059 1.606 5.727.418.683 2.05-.559 4.894-3.727l4.5 4z" mask="url(#q4wdaq59qc)"/>
+                        <path fill="#000" fill-opacity=".08" d="M16 13L24 21 15 24.5zM6 13L11 18 9 20.5z" mask="url(#q4wdaq59qc)"/>
+                    </g>
+                    <g transform="translate(6 4.5)">
+                        <mask id="b3d6z870me" fill="#fff">
+                            <use xlink:href="#wlstf9wo5d"/>
+                        </mask>
+                        <circle cx="2.5" cy="2.5" r="3" stroke="#222"/>
+                        <path fill="#000" fill-opacity=".08" d="M-2 0c3.667-.333 5.167-.333 4.5 0-1 .5-1 2-.5 3s1 1.5 2 2.5c.667.667-1.333.5-6-.5V0z" mask="url(#b3d6z870me)"/>
+                    </g>
+                    <path stroke="#222" d="M19.915 16.974L16 12.5 9 20.5M11 17.5L6.5 13.5 2 17.5"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

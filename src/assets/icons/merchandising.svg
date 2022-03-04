@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <filter id="evy41usupa" width="175%" height="175%" x="-37.5%" y="-37.5%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="prqv0ui62b" d="M14 0L26.124 7 26.124 21 14 28 1.876 21 1.876 7z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#F7F7F7" stroke="#E4E4E4" stroke-width=".5" transform="translate(-227 -192) translate(227 192)">
+                    <rect width="39.5" height="39.5" x=".25" y=".25" rx="5"/>
+                </g>
+                <g filter="url(#evy41usupa)" transform="translate(-227 -192) translate(227 192) translate(6 6)">
+                    <g>
+                        <mask id="iwsettfaic" fill="#fff">
+                            <use xlink:href="#prqv0ui62b"/>
+                        </mask>
+                        <path stroke="#222" d="M14 .577L25.624 7.29V20.71L14 27.423 2.376 20.71V7.29L14 .577z"/>
+                        <path fill="#000" fill-opacity=".05" d="M-1-3C.333 3 2.667 7.333 6 10c-.5 2.5-.5 7-.5 9s4.658 4.126 8.5 3.5c4.616-.752 10.245-6.954 11.5-8 3-2.5 4.5 10-7 14-2.134.742-5.83-.645-11.088-4.16H-1V-3z" mask="url(#iwsettfaic)"/>
+                    </g>
+                    <path stroke="#222" stroke-linecap="square" d="M3.063 7.875L14 14.438 24.938 7.875M8.75 4.375L19.417 10.775"/>
+                    <path stroke="#222" d="M14 14L14 27.125"/>
+                    <path fill="#FF6738" stroke="#222" stroke-width=".5" d="M22.925 16.04v3.473l-5.1 2.697v-3.473l5.1-2.697z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
