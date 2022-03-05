@@ -1,9 +1,17 @@
 .app {
   min-height: 100vh;
   height: 100%;
+  display: flex;
 }
-.appList {
+.list {
   min-height: 100vh;
+  width: 100%;
   max-width: 40%;
   background-color: aliceblue;
+}
+.map {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 60%;
+  background: #000;
 }

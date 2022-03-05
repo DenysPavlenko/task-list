@@ -143,11 +143,7 @@ const TaskList = () => {
             </div>
           </>
         )}
-        {splitTasks.length === 0 && (
-          <div>
-            <h4>Nothing to display</h4>
-          </div>
-        )}
+        {splitTasks.length === 0 && <h4>Nothing to display</h4>}
       </div>
     </>
   );

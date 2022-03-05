@@ -14,6 +14,8 @@
 }
 .scroll {
   margin-bottom: 1rem;
+  overflow: auto;
+  max-height: calc(100vh - 170px);
 }
 .pagination {
   width: 100%;
