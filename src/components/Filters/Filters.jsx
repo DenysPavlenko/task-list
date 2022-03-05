@@ -1,26 +1,28 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'components/Select';
 import Button from 'components/Button';
 import Radio from 'components/Radio';
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
 import categories from 'data/categories';
-import { useFiltersState } from 'context/FiltersContext';
 import css from './Filters.module.scss';
 
 const Filters = ({ show, onClose }) => {
-  const { filters, dispatch } = useFiltersState();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
 
   const [category, setCategory] = useState(categories[0]);
-  const [groupBy, setGroupBy] = useState(filters.groupBy);
+  const [groupBy, setGroupBy] = useState(state.groupBy);
 
   const handleGroupBy = (e) => {
     groupBy === e.target.value ? setGroupBy('') : setGroupBy(e.target.value);
   };
 
   const handleApply = () => {
-    dispatch({ type: 'SET_GROUP_BY', payload: groupBy });
     dispatch({ type: 'SET_CATEGORY', payload: category.value });
+    dispatch({ type: 'SET_GROUP_BY', payload: groupBy });
+    dispatch({ type: 'APPLY_FILTERS' });
     onClose();
   };
 

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import TaskList from 'components/TaskList';
 import Map from 'components/Map';
-import { FiltersProvider } from 'context/FiltersContext';
 import css from './App.module.scss';
 
 const App = () => {
@@ -25,9 +24,7 @@ const App = () => {
   return (
     <div className={css.app}>
       <div className={css.list}>
-        <FiltersProvider>
-          <TaskList />
-        </FiltersProvider>
+        <TaskList />
       </div>
       <div className={css.map}>
         <Map
@@ -42,4 +39,3 @@ const App = () => {
 };
 
 export default App;
-// AIzaSyCeXZtCX49U4dBm4lhkyxrx3NeumwsYfBg

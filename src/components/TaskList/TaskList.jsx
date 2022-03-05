@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Filters from 'components/Filters';
 import TaskItem from 'components/TaskItem';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
 import Pagination from 'components/Pagination';
 import Checkbox from 'components/Checkbox';
-import tasks from 'data/tasks';
-import { filterByTab, filterTasks, tasksPagination } from './utils';
-import { useFiltersState } from 'context/FiltersContext';
+import { setTab, setAnywhere, setAnytime } from 'redux/actions/tasks';
+import { tasksPagination } from './utils';
 import categories from 'data/categories';
 import css from './TaskList.module.scss';
 
@@ -20,54 +20,29 @@ const tabs = [
 const TaskList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
-  const [tab, setTab] = useState(tabs[0].value);
-  const [anywhere, setAnywhere] = useState(false);
-  const [anytime, setAnytime] = useState(false);
-  const { filters } = useFiltersState();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const { tasks, tab, anywhere, anytime } = state;
 
   const toggleFilters = () => setShowFilters((show) => !show);
 
   const handleTabChange = (tab) => {
-    setAnywhere(false);
-    setAnytime(false);
-    setTab(tab);
+    dispatch(setTab(tab));
+    dispatch(setAnywhere(false));
+    dispatch(setAnytime(false));
   };
 
   useEffect(() => {
     page !== 1 && setPage(1);
-  }, [filters, tab, anytime, anywhere]);
+  }, [state, tab, anytime, anywhere]);
 
-  const tasksByTab = useMemo(() => {
-    if (anywhere) {
-      const filtered = tasks.filter((task) => !task.location);
-      return filtered.sort((a, b) => {
-        if (a.category === 'START-HERE' || b === 'START-HERE') {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-    } else if (anytime) {
-      const filtered = tasks.filter((task) => !task.appointmentDateTime);
-      return filtered.sort((a, b) => {
-        if (a.category === 'START-HERE' || b === 'START-HERE') {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-    } else {
-      return filterByTab(tasks, tab);
-    }
-  }, [tab, anywhere, anytime]);
-
-  const filteredTasks = useMemo(() => {
-    return filterTasks(tasksByTab, filters);
-  }, [filters, tasksByTab]);
+  // const ft = useMemo(() => {
+  //   return filterTasks(tasks, state);
+  // }, [state, tasks]);
 
   const splitTasks = useMemo(() => {
-    return tasksPagination(page, filteredTasks);
-  }, [page, filteredTasks, tasksByTab]);
+    return tasksPagination(page, tasks);
+  }, [page, tasks]);
 
   return (
     <>
@@ -90,26 +65,26 @@ const TaskList = () => {
             ))}
           </ButtonGroup>
         </div>
+        <div className={css.checkboxes}>
+          {tab === 'location' && (
+            <Checkbox
+              value="location"
+              label="Anywhere tasks"
+              checked={anywhere}
+              onChange={(e) => dispatch(setAnywhere(e.target.checked))}
+            />
+          )}
+          {tab === 'time' && (
+            <Checkbox
+              value="location"
+              label="Anytime tasks"
+              checked={anytime}
+              onChange={(e) => dispatch(setAnytime(e.target.checked))}
+            />
+          )}
+        </div>
         {splitTasks.length > 0 && (
           <>
-            <div className={css.checkboxes}>
-              {tab === 'location' && (
-                <Checkbox
-                  value="location"
-                  label="Anywhere tasks"
-                  checked={anywhere}
-                  onChange={(e) => setAnywhere(e.target.checked)}
-                />
-              )}
-              {tab === 'time' && (
-                <Checkbox
-                  value="location"
-                  label="Anytime tasks"
-                  checked={anytime}
-                  onChange={(e) => setAnytime(e.target.checked)}
-                />
-              )}
-            </div>
             <div className={css.scroll}>
               {splitTasks.map((task) => {
                 const icon = categories.find(
@@ -123,12 +98,14 @@ const TaskList = () => {
                     cash={task.reward.cash}
                     xp={!task.reward.cash ? task.reward.xp : null}
                     location={
-                      (tab === 'location' || tab === 'all') &&
-                      task?.location?.address
+                      tab === 'location' || tab === 'all'
+                        ? task?.location?.address
+                        : ''
                     }
                     time={
-                      (tab === 'time' || tab === 'all') &&
-                      task?.location?.address
+                      tab === 'time' || tab === 'all'
+                        ? task?.location?.address
+                        : ''
                     }
                   />
                 );
@@ -137,7 +114,7 @@ const TaskList = () => {
             <div className={css.pagination}>
               <Pagination
                 page={page}
-                pages={Math.ceil(filteredTasks.length / 10)}
+                pages={Math.ceil(tasks.length / 10)}
                 setPage={setPage}
               />
             </div>
