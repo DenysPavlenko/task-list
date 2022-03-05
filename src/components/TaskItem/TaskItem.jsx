@@ -22,8 +22,8 @@ const TaskItem = ({ title, cash, xp, time, icon, location }) => {
 
 TaskItem.propTypes = {
   title: PropTypes.string,
-  cash: PropTypes.string,
-  xp: PropTypes.string,
+  cash: PropTypes.number,
+  xp: PropTypes.number,
   time: PropTypes.string,
   icon: PropTypes.string,
   location: PropTypes.string,

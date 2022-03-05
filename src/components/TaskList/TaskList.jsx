@@ -121,13 +121,14 @@ const TaskList = () => {
                     icon={icon}
                     title={task.title}
                     cash={task.reward.cash}
-                    xp={!task.reward.cash && task.reward.xp}
+                    xp={!task.reward.cash ? task.reward.xp : null}
                     location={
                       (tab === 'location' || tab === 'all') &&
-                      task.location.address
+                      task?.location?.address
                     }
                     time={
-                      (tab === 'time' || tab === 'all') && task.location.address
+                      (tab === 'time' || tab === 'all') &&
+                      task?.location?.address
                     }
                   />
                 );
