@@ -62,13 +62,8 @@ export const filterByTab = (tasks, tab) => {
   return filtered;
 };
 
-export const filterTasks = (tasks, filters) => {
-  const { category, groupBy } = filters;
-
-  let filteredTasks = tasks.filter((task) => {
-    return !category || category === 'ALL' ? true : task.category === category;
-  });
-
+export const filterGroupBy = (tasks, groupBy) => {
+  let filteredTasks = tasks;
   if (groupBy === 'reward') {
     const tasksWithCash = tasks.filter(({ reward }) => reward.cash);
     const tasksWithXp = tasks.filter(({ reward }) => reward.xp && !reward.cash);
@@ -88,6 +83,7 @@ export const filterTasks = (tasks, filters) => {
   if (groupBy === 'paid') {
     filteredTasks = filteredTasks.filter((task) => task?.reward?.cash);
   }
+
   if (groupBy === 'xp') {
     filteredTasks = filteredTasks.filter(
       (task) => task?.reward?.xp && !task?.reward?.cash

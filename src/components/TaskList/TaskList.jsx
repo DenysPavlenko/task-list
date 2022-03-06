@@ -6,7 +6,12 @@ import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
 import Pagination from 'components/Pagination';
 import Checkbox from 'components/Checkbox';
-import { setTab, setAnywhere, setAnytime } from 'redux/actions/tasks';
+import {
+  setTab,
+  setAnywhere,
+  setAnytime,
+  filterAllTasks,
+} from 'redux/actions/tasks';
 import { tasksPagination } from './utils';
 import categories from 'data/categories';
 import css from './TaskList.module.scss';
@@ -22,7 +27,7 @@ const TaskList = () => {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  const { tasks, tab, anywhere, anytime } = state;
+  const { tasks, tab, anywhere, anytime, category, groupBy } = state;
 
   const toggleFilters = () => setShowFilters((show) => !show);
 
@@ -33,12 +38,9 @@ const TaskList = () => {
   };
 
   useEffect(() => {
+    dispatch(filterAllTasks());
     page !== 1 && setPage(1);
-  }, [state, tab, anytime, anywhere]);
-
-  // const ft = useMemo(() => {
-  //   return filterTasks(tasks, state);
-  // }, [state, tasks]);
+  }, [tab, anywhere, anytime, category, groupBy]);
 
   const splitTasks = useMemo(() => {
     return tasksPagination(page, tasks);

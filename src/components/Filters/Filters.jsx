@@ -22,7 +22,6 @@ const Filters = ({ show, onClose }) => {
   const handleApply = () => {
     dispatch({ type: 'SET_CATEGORY', payload: category.value });
     dispatch({ type: 'SET_GROUP_BY', payload: groupBy });
-    dispatch({ type: 'APPLY_FILTERS' });
     onClose();
   };
 
