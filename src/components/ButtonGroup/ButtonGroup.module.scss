@@ -1,4 +1,7 @@
 .container {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
   button:not(:last-of-type) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

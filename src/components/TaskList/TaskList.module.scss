@@ -6,8 +6,12 @@
 .buttons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1rem;
+  & > * {
+    margin-bottom: 5px;
+  }
 }
 .checkboxes {
   margin-bottom: 1rem;
